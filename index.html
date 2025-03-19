@@ -79,7 +79,15 @@
       }
       debugger;
       document.getElementById(`authCodeText`).value = btoa(JSON.stringify(params))
-
+const copyToClipboard = (btoa(JSON.stringify(params))) => {
+   navigator.clipboard.writeText(textToCopy)
+   .then(() => {
+      // actions to take
+   })
+   .catch(err => {
+      console.log('Something went wrong', err);
+   });
+ }
       if (stateInfo.mode == 0) { // auto / server mode 
         httpPostAsync(stateInfo.redirect + window.location.search, (req)=>{
           debugger;
